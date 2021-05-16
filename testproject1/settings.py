@@ -25,7 +25,9 @@ SECRET_KEY = '$@jujjpq=g6mxx2mr=1w3gs3a+$b+!@6#*_swy4ucbpstrqg#x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+        ".ap-northeast-2.compute.amazonaws.com"
+        ]
 
 
 # Application definition
@@ -78,12 +80,17 @@ WSGI_APPLICATION = 'testproject1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'testproject2',
-        'USER': 'root',
-        'PASSWORD': 'hdk941064!',
-        'HOST': 'localhost',
+        'NAME': 'okwangdb',
+        'USER': 'dokyung',
+        'PASSWORD': 'kwsw5light',
+        'HOST': 'okwang-db.cxww7nxtvojf.ap-northeast-2.rds.amazonaws.com',
         'PORT': '3306',
-    }
+        'OPTIONS': {
+            'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
+            'charset': 'utf8mb4',
+            'use_unicode': True,
+        }
+    },
 }
 
 
